@@ -45,18 +45,18 @@ body {
   height: 12px;
   background: rgb(60, 60, 60);
 }
-.wrapper:hover > .slider {
+.settings-wrapper:hover > .slider {
   /* border-style: dashed; */
 
   opacity: 0.6;
 }
-.wrapper:hover > .slider:hover {
+.settings-wrapper:hover > .slider:hover {
   /* font-style: italic; */
   opacity: 1;
 }
 
-.button {
-  display: flex;
+button {
+  /* display: flex; */
   margin-top: 8px;
   padding: 4px 8px 4px 8px;
   border: none;
@@ -68,16 +68,16 @@ body {
   cursor: pointer;
   /* opacity: 0.6; */
 }
-.wrapper:hover > .button {
+.btn-wrapper:hover > button {
   /* border-style: dashed; */
 
   opacity: 0.6;
 }
-.wrapper:hover > .button:hover {
+.btn-wrapper:hover > button:hover {
   /* font-style: italic; */
   opacity: 1;
 }
-.button:active {
+button:active {
   /* border-style: dashed; */
   background-color: rgb(60, 60, 60);
   color: rgb(245, 245, 245);
@@ -95,7 +95,11 @@ body {
   /* background-color: var(--off-white); */
   box-shadow: 0 0 64px var(--off-black-transparent);
 }
-.wrapper {
+.settings-wrapper {
+  width: 840px;
   margin-left: auto;
   margin-right: auto;
+}
+.btn-wrapper {
+  display: inline-block;
 }

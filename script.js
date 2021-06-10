@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   function loop() {
     clearPath(svg);
     let d,
-      len = Math.random() * 5000 + 5;
+      len = Math.random() * 1000 + 5;
     startX = Math.random() * w;
     startY = Math.random() * h;
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log("START");
     programLoop = setInterval(function () {
       loop();
-    }, 1000);
+    }, 200);
   });
   document.getElementById("stop").addEventListener("click", () => {
     console.log("STOP");
@@ -55,6 +55,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById("save").addEventListener("click", () => {
     console.log("STOP");
     clearInterval(programLoop);
-    
+
   });
 });

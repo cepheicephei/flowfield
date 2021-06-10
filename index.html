@@ -2,12 +2,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Daniel McCharen 2021">
+    <meta name="author" content="Daniel McCharen 2021" />
     <title>Flowfield</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- <script src="../addons/p5.sound.js"></script> -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
 
   <body>
+    <div id="canvas-wrapper">
+      <svg
+        version="1.1"
+        id="svg-canvas"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0"
+        y="0"
+        viewBox="0 0 840 594"
+        width="42cm"
+        height="29.7cm"
+        xml:space="preserve"
+      ></svg>
+    </div>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+    <button id="save">SAVE SVG</button>
   </body>
 </html>

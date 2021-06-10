@@ -64,14 +64,14 @@ button {
   border-color: #000000;
   border-style: solid;
   /* border-radius: 12px; */
-  background-color: transparent;
+  background-color: white;
   cursor: pointer;
   /* opacity: 0.6; */
 }
 .btn-wrapper:hover > button {
   /* border-style: dashed; */
 
-  opacity: 0.6;
+  opacity: 0.4;
 }
 .btn-wrapper:hover > button:hover {
   /* font-style: italic; */

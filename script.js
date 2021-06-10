@@ -10,14 +10,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
   function loop() {
     clearPath(svg);
     let d,
-      len = Math.random() * 1000 + 5;
+      len = Math.random() * 3000 + 5;
     startX = Math.random() * w;
     startY = Math.random() * h;
 
     for (let i = 0; i < len; i++) {
       d = "M " + startX + " " + startY + " ";
-      startX += (Math.random() - 0.5) * 20;
-      startY += (Math.random() - 0.5) * 20;
+      startX += (Math.random() - 0.5) * 10;
+      startY += (Math.random() - 0.5) * 10;
       d += " L " + startX + " " + startY;
       path = document.createElementNS(ns, "path");
       path.setAttribute("fill", "none");

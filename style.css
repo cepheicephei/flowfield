@@ -11,11 +11,11 @@ body {
   font-family: monospace;
 }
 .slider {
-  display: flex;
+  /* display: flex; */
   margin-top: 16px;
   cursor: grab;
   -webkit-appearance: none;
-  width: 100%;
+  width: 120px;
   height: 2px;
   background: #d3d3d3;
   outline: none;
@@ -45,12 +45,12 @@ body {
   height: 12px;
   background: rgb(60, 60, 60);
 }
-.settings-wrapper:hover > .slider {
+.btn-wrapper:hover > .slider {
   /* border-style: dashed; */
 
   opacity: 0.6;
 }
-.settings-wrapper:hover > .slider:hover {
+.btn-wrapper:hover > .slider:hover {
   /* font-style: italic; */
   opacity: 1;
 }

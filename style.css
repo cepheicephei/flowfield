@@ -103,3 +103,6 @@ button:active {
 .btn-wrapper {
   display: inline-block;
 }
+.info-label {
+  margin-bottom: 0;
+}

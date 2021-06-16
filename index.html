@@ -6,6 +6,8 @@
     <title>Flowfield</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <script src="flowfield.js"></script>
+    <script src="particle.js"></script>
   </head>
 
   <body>
@@ -25,10 +27,45 @@
     </div>
     <div class="settings-wrapper">
       <div class="btn-wrapper">
-        <button id="start">START</button>
-        <button id="stop">STOP</button>
+        <button id="generate-flowfield">REGENERATE FLOWFIELD</button>
+        <button id="loop-toggle">START</button>
         <button id="save">SAVE SVG</button>
-        <input type="range" min="17" max="500" value="17" class="slider" id="framerate-slider">
+        <p id="framerate" class="info-label">Refresh rate: 17ms</p>
+        <input
+          type="range"
+          min="17"
+          max="500"
+          value="17"
+          class="slider"
+          id="framerate-slider"
+        />
+        <p id="noise-resolution" class="info-label">Noise resolution: 5</p>
+        <input
+          type="range"
+          min="1"
+          max="1000"
+          value="5"
+          class="slider"
+          id="noise-resolution-slider"
+        />
+        <p id="max-lines" class="info-label">Max lines: 200</p>
+        <input
+          type="range"
+          min="20"
+          max="2000"
+          value="200"
+          class="slider"
+          id="max-particles-slider"
+        />
+        <p id="draw-speed" class="info-label">Draw speed: 10</p>
+        <input
+          type="range"
+          min="1"
+          max="20"
+          value="10"
+          class="slider"
+          id="particle-speed-slider"
+        />
       </div>
     </div>
   </body>

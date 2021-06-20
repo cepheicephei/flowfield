@@ -102,13 +102,13 @@ particleSpeedSliderWrapper.setAttribute("class", "slider-with-caption");
 let particleSpeedSliderCaption = document.createElement("p");
 particleSpeedSliderCaption.setAttribute("id", "draw-speed");
 particleSpeedSliderCaption.setAttribute("class", "info-label");
-particleSpeedSliderCaption.innerHTML = "Draw Speed: 200";
+particleSpeedSliderCaption.innerHTML = "Draw Speed: 100";
 
 let particleSpeedSlider = document.createElement("input");
 particleSpeedSlider.setAttribute("type", "range");
-particleSpeedSlider.setAttribute("min", "20");
-particleSpeedSlider.setAttribute("max", "1000");
-particleSpeedSlider.setAttribute("value", "200");
+particleSpeedSlider.setAttribute("min", "1");
+particleSpeedSlider.setAttribute("max", "100");
+particleSpeedSlider.setAttribute("value", "5");
 particleSpeedSlider.setAttribute("class", "slider");
 particleSpeedSlider.setAttribute("id", "particle-speed-slider");
 

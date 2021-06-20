@@ -9,17 +9,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
     w = svg.viewBox.animVal.width;
     h = svg.viewBox.animVal.height;
 
-    border = 8;
-    resolution = 4;
+    border = 16;
+    resolution = 8;
     
-    sFramerate = document.getElementById("framerate-slider");
-    sFramerate.addEventListener("input", () => {
-      noLoop();
-      document.getElementById("framerate").innerHTML =
-      "Refresh rate: " + sFramerate.value + "ms";
-      document.getElementById("loop-toggle").innerHTML = "STOP";
-      loop();
-    });
+    // sFramerate = document.getElementById("framerate-slider");
+    // sFramerate.addEventListener("input", () => {
+    //   noLoop();
+    //   document.getElementById("framerate").innerHTML =
+    //   "Refresh rate: " + sFramerate.value + "ms";
+    //   document.getElementById("loop-toggle").innerHTML = "STOP";
+    //   loop();
+    // });
     sNoiseRes = document.getElementById("noise-resolution-slider");
     sNoiseRes.addEventListener("input", () => {
       document.getElementById("noise-resolution").innerHTML =
@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       }
       particles.push(
         new Particle(
-          mapRange(Math.random(), 0, 1, border, w - border),
-          mapRange(Math.random(), 0, 1, border, h - border),
+          Helpers.map(Math.random(), 0, 1, border, w - border),
+          Helpers.map(Math.random(), 0, 1, border, h - border),
           w,
           h,
           border,
@@ -84,38 +84,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       path.setAttribute("d", d);
       svg.appendChild(path);
     }
-    // clearPath(svg);
-    // let d,
-    //   len = 1000;
-    // startX = w / 2;
-    // startY = h / 2;
-
-    // path = document.createElementNS(ns, "path");
-    // path.setAttribute("fill", "none");
-    // path.setAttribute("stroke", "black");
-    // path.setAttribute("stroke-width", "0.25mm");
-
-    // d = "M " + startX + " " + startY + " ";
-    // for (let i = 0; i < len; i++) {
-    //   d += " L " + startX + " " + startY;
-    //   startX += (Math.random() - 0.5) * 12;
-    //   startY += (Math.random() - 0.5) * 12;
-    // }
-    // path.setAttribute("d", d);
-    // svg.appendChild(path);
-
-    //   for (let i = 0; i < len; i++) {
-    //     path = document.createElementNS(ns, "circle");
-    //     path.setAttribute("fill", "white");
-    //     path.setAttribute("stroke", "black");
-    //     path.setAttribute("stroke-width", "0.35mm");
-    //     path.setAttribute("cx", startX);
-    //     path.setAttribute("cy", startY);
-    //     path.setAttribute("r", 40 * i / 1000 + 10);
-    //     startX += (Math.random() - 0.5) * 12;
-    //     startY += (Math.random() - 0.5) * 12;
-    //     svg.appendChild(path);
-    //   }
   }
   setup();
 
@@ -123,7 +91,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     noLoop();
     programLoop = setInterval(function () {
       draw();
-    }, sFramerate.value);
+    }, 1);
   }
 
   function noLoop() {
@@ -138,13 +106,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         el.remove();
       } else i++;
     }
-  }
-
-  function mapRange(value, a, b, c, d) {
-    // first map value from (a..b) to (0..1)
-    value = (value - a) / (b - a);
-    // then map it from (0..1) to (c..d) and return it
-    return c + value * (d - c);
   }
 
   document
@@ -170,7 +131,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // let filename = 'file.svg';
     // let blob = new Blob([content], {type: "text/plain;charset=utf-8"});
     // save(blob, filename);
-    let data = document.getElementById("canvas-wrapper").innerHTML;
+    let data = document.getElementById("svg-canvas-wrapper").innerHTML;
     let bl = new Blob([data], { type: "image/svg+xml" });
     let a = document.createElement("a");
     a.href = URL.createObjectURL(bl);

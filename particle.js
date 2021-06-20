@@ -17,24 +17,26 @@ class Particle {
 
     this.border = border;
     this.flowfield = flowfield;
+
+    // this.rotation = -1;
   }
 
-  render() {
-    noFill();
-    stroke(0);
-    beginShape();
-    for (let i = 0; i < this.vertices.length; ++i) {
-      let v = this.vertices[i];
-      vertex(v.x, v.y);
-    }
-    endShape();
-  }
+  // render() {
+  //   noFill();
+  //   stroke(0);
+  //   beginShape();
+  //   for (let i = 0; i < this.vertices.length; ++i) {
+  //     let v = this.vertices[i];
+  //     vertex(v.x, v.y);
+  //   }
+  //   endShape();
+  // }
 
   move() {
     if (!this.removeFlag) {
-      let rot = this.flowfield.flowPoints[this.flowfield.getFlowPointByCanvasPosition(this.positionx, this.positiony)].r;
-      let xMove = Math.sin(rot * Math.PI * 2) * this.moveSpeed + this.positionx;
-      let yMove = Math.cos(rot * Math.PI * 2) * this.moveSpeed + this.positiony;
+      let rot = this.flowfield.getRotationByCanvasPosition(this.positionx, this.positiony);
+      let xMove = Math.sin(rot) * this.moveSpeed + this.positionx;
+      let yMove = Math.cos(rot) * this.moveSpeed + this.positiony;
       if (xMove >= 0 + this.border && xMove <= this.width - this.border && yMove >= 0 + this.border && yMove <= this.height - this.border) {
         this.previousPositionx = this.positionx;
         this.previouspositiony = this.positiony;
@@ -54,7 +56,7 @@ class Particle {
   }
 
   removeLoose() {
-    if (this.isMoving === false) {
+    if (!this.isMoving) {
       if (this.vertices.length < 4) {
         this.removeFlag = true;
       }

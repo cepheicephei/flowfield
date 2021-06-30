@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
   document.getElementById("save").addEventListener("click", () => {
     noLoop();
+    document.getElementById("loop-toggle").innerHTML = "START";
     // let content = document.getElementById('svg-canvas');
     // let filename = 'file.svg';
     // let blob = new Blob([content], {type: "text/plain;charset=utf-8"});

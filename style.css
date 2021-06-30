@@ -22,9 +22,9 @@ body {
   outline: none;
   /* opacity: 0.6; */
 }
-.slider:hover {
+/* .slider:hover { */
   /* opacity: 1; */
-}
+/* } */
 .slider:active {
   cursor: grabbing;
 }

@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       }
       particles.push(
         new Particle(
-          Helpers.map(Math.random(), 0, 1, border, w - border),
-          Helpers.map(Math.random(), 0, 1, border, h - border),
+          Helpers.mapRange(Math.random(), 0, 1, border, w - border),
+          Helpers.mapRange(Math.random(), 0, 1, border, h - border),
           w,
           h,
           border,

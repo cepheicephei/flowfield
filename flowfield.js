@@ -11,7 +11,7 @@ class Flowfield {
     this.xvals = 0;
     this.yvals = 0;
 
-    this.increment = Helpers.map(this.noiseRes, 1, 1000, 0.00001, 0.05);
+    this.increment = Helpers.mapRange(this.noiseRes, 1, 1000, 0.00001, 0.05);
 
     Noise.seed(Math.random());
     
@@ -27,18 +27,18 @@ class Flowfield {
         this.flowPoints.push({
           x: x,
           y: y,
-          r: Helpers.map(Noise.perlin2(this.xoff, this.yoff), -1, 1, 0, Math.PI * 2)
-          // r: Helpers.map(Noise.perlin2(this.xoff, this.yoff), -1, 1, 0, 1),
+          r: Helpers.mapRange(Noise.perlin2(this.xoff, this.yoff), -1, 1, 0, Math.PI * 2)
+          // r: Helpers.mapRange(Noise.perlin2(this.xoff, this.yoff), -1, 1, 0, 1),
         });
-        // console.log(Helpers.map(Noise.perlin2(this.xoff, this.yoff), -1, 1, 0, Math.PI * 2))
+        // console.log(Helpers.mapRange(Noise.perlin2(this.xoff, this.yoff), -1, 1, 0, Math.PI * 2))
       }
     }
   }
 
   getRotationByCanvasPosition(x, y) {
     let index =
-      Math.floor(Helpers.map(x, 0, this.width, 0, this.xvals)) +
-      Math.floor(Helpers.map(y, 0, this.height, 0, this.yvals)) * this.xvals;
+      Math.floor(Helpers.mapRange(x, 0, this.width, 0, this.xvals)) +
+      Math.floor(Helpers.mapRange(y, 0, this.height, 0, this.yvals)) * this.xvals;
     return this.flowPoints[index].r;
   }
 }
